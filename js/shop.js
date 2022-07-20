@@ -22,6 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const productBoxes = document.querySelectorAll(".product-box");
 
     productBoxes.forEach((box) => {
+        const innerBoxes = box.querySelectorAll(".inner-box");
 
+        innerBoxes.forEach((innerBox, index) => {
+            const amount = innerBox.querySelector(".amount");
+            const minus = innerBox.querySelector(".minus");
+            const plus = innerBox.querySelector(".plus");
+
+            minus.addEventListener("click", () => {
+                amount.innerHTML = Number(amount.innerHTML) - 1;
+            });
+
+            plus.addEventListener("click", () => {
+                amount.innerHTML = Number(amount.innerHTML) + 1;
+            });
+        });
     });
 });
