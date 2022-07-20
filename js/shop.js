@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
 
     const productBoxes = document.querySelectorAll(".product-box");
-    const price = 0;
+    let price = 0;
 
     productBoxes.forEach((box) => {
         const innerBoxes = box.querySelectorAll(".product-inner");
