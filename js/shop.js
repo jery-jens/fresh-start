@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
 
                 if (index === 0) {
-                    Number(amount.innerHTML) > 0 ? innerBox.classList.remove("closed") : innerBox.classList.add("closed");
+                    Number(amount.innerHTML) > 0 ? innerBox[1].classList.remove("closed") : innerBox[1].classList.add("closed");
                 };
             });
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
 
                 if (index === 0) {
-                    Number(amount.innerHTML) > 0 ? innerBox.classList.remove("closed") : innerBox.classList.add("closed");
+                    Number(amount.innerHTML) > 0 ? innerBox[1].classList.remove("closed") : innerBox[1].classList.add("closed");
                 };
             });
         });
