@@ -10,11 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
         image.addEventListener("click", () => {
             const style = image.currentStyle || window.getComputedStyle(image, false);
             const url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-            console.log(url);
+            
+            shownImage.style.backgroundImage = `url(${url})`;
         });
     });
 
     /**
      * Selector
      */
+
+    const productBoxes = document.querySelectorAll(".product-box");
+
+    productBoxes.forEach((box) => {
+
+    });
 });
