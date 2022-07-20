@@ -27,8 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         innerBoxes.forEach((innerBox, index) => {
             const amount = innerBox.querySelector(".amount");
+            
             const minus = innerBox.querySelector(".minus");
+            minus.style.userSelect = "none";
+
             const plus = innerBox.querySelector(".plus");
+            plus.style.userSelect = "none";
+
             const productPrice = Number(innerBox.querySelector(".inner-product-price").innerHTML);
 
             minus.addEventListener("click", () => {
