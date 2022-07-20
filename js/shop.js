@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
                     price = price - productPrice;
                     console.log(price)
+                    document.querySelector(".price").innerHTML = `$${price}`;
                 };
 
                 if (index === 0) {
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
                 price = price + productPrice;
                 console.log(price)
+                document.querySelector(".price").innerHTML = `$${price}`;
 
                 if (index === 0) {
                     Number(amount.innerHTML) > 0 ? innerBoxes[1].classList.remove("closed") : innerBoxes[1].classList.add("closed");
