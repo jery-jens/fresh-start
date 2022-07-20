@@ -36,15 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     amount.innerHTML = Number(amount.innerHTML) - 1;
                     console.log(amount.innerHTML);
                     Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
-
-                    } else {
-
-                    };
                 };
             });
 
             plus.addEventListener("click", () => {
                 amount.innerHTML = Number(amount.innerHTML) + 1;
+                console.log(amount.innerHTML)
             });
         });
     });
