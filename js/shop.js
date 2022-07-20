@@ -28,20 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
             const amount = innerBox.querySelector(".amount");
             const minus = innerBox.querySelector(".minus");
             const plus = innerBox.querySelector(".plus");
-            console.log(minus, plus);
 
             minus.addEventListener("click", () => {
-                console.log(amount.innerHTML);
                 if (Number(amount.innerHTML) !== 0) {
                     amount.innerHTML = Number(amount.innerHTML) - 1;
-                    console.log(amount.innerHTML);
                     Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
+                };
+
+                if (index === 0) {
+                    Number(amount.innerHTML) > 0 ? innerBox.classList.remove("closed") : innerBox.classList.add("closed");
                 };
             });
 
             plus.addEventListener("click", () => {
                 amount.innerHTML = Number(amount.innerHTML) + 1;
-                console.log(amount.innerHTML)
+                Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
+
+                if (index === 0) {
+                    Number(amount.innerHTML) > 0 ? innerBox.classList.remove("closed") : innerBox.classList.add("closed");
+                };
             });
         });
     });
