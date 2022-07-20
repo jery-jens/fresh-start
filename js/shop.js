@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
 
                 if (index === 0) {
-                    Number(amount.innerHTML) > 0 ? innerBox[1].classList.remove("closed") : innerBox[1].classList.add("closed");
+                    Number(amount.innerHTML) > 0 ? innerBoxes[1].classList.remove("closed") : innerBoxes[1].classList.add("closed");
                 };
             });
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(price)
 
                 if (index === 0) {
-                    Number(amount.innerHTML) > 0 ? innerBox[1].classList.remove("closed") : innerBox[1].classList.add("closed");
+                    Number(amount.innerHTML) > 0 ? innerBoxes[1].classList.remove("closed") : innerBoxes[1].classList.add("closed");
                 };
             });
         });
