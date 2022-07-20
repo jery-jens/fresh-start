@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
      */
 
     const productBoxes = document.querySelectorAll(".product-box");
+    const price = 0;
 
     productBoxes.forEach((box) => {
         const innerBoxes = box.querySelectorAll(".product-inner");
@@ -28,11 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const amount = innerBox.querySelector(".amount");
             const minus = innerBox.querySelector(".minus");
             const plus = innerBox.querySelector(".plus");
+            const productPrice = Number(innerBox.querySelector(".inner-product-price").innerHTML);
 
             minus.addEventListener("click", () => {
                 if (Number(amount.innerHTML) !== 0) {
                     amount.innerHTML = Number(amount.innerHTML) - 1;
                     Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
+                    price = price - productPrice;
+                    console.log(price)
                 };
 
                 if (index === 0) {
@@ -43,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             plus.addEventListener("click", () => {
                 amount.innerHTML = Number(amount.innerHTML) + 1;
                 Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
+                price = price + productPrice;
+                console.log(price)
 
                 if (index === 0) {
                     Number(amount.innerHTML) > 0 ? innerBox[1].classList.remove("closed") : innerBox[1].classList.add("closed");
