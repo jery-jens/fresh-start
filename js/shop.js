@@ -30,7 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const plus = innerBox.querySelector(".plus");
 
             minus.addEventListener("click", () => {
-                amount.innerHTML = Number(amount.innerHTML) - 1;
+                if (Number(amount.innerHTML) !== 0) {
+                    amount.innerHTML = Number(amount.innerHTML) - 1;
+                    Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
+
+                    } else {
+
+                    };
+                };
             });
 
             plus.addEventListener("click", () => {
