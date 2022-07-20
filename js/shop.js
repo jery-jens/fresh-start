@@ -20,11 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
      */
 
     const productBoxes = document.querySelectorAll(".product-box");
+    console.log(productBoxes);
 
     productBoxes.forEach((box) => {
         const innerBoxes = box.querySelectorAll(".inner-box");
+        console.log(innerBoxes)
 
         innerBoxes.forEach((innerBox, index) => {
+            console.log(innerBox)
             const amount = innerBox.querySelector(".amount");
             const minus = innerBox.querySelector(".minus");
             const plus = innerBox.querySelector(".plus");
