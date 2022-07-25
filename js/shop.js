@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price = price + productPrice;
                 document.querySelector(".price").innerHTML = `$${price.toFixed(2)}`;
                 document.getElementById(productName).value = amount.innerHTML;
+                console.log(productName)
 
                 if (index === 0) {
                     Number(amount.innerHTML) > 0 ? innerBoxes[1].classList.remove("closed") : innerBoxes[1].classList.add("closed");
