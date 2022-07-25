@@ -57,12 +57,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 price = price + productPrice;
                 document.querySelector(".price").innerHTML = `$${price.toFixed(2)}`;
                 document.getElementById(productName).value = Number(amount.innerHTML);
-                console.log(document.getElementById(productName).value)
 
                 if (index === 0) {
                     Number(amount.innerHTML) > 0 ? innerBoxes[1].classList.remove("closed") : innerBoxes[1].classList.add("closed");
                 };
             });
         });
+    });
+
+    /**
+     * Form
+     */
+
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+        window.location = window.location.pathname + "/out-of-stock";
     });
 });
