@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             minus.addEventListener("click", () => {
                 if (Number(amount.innerHTML) !== 0) {
                     amount.innerHTML = Number(amount.innerHTML) - 1;
-                    Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
+                    // Number(amount.innerHTML) === 0 ? minus.classList.add("not-active") : minus.classList.remove("not-active");
                     price = price - productPrice;
                     document.querySelector(".price").innerHTML = `$${price.toFixed(2)}`;
                     document.getElementById(productName).value = Number(amount.innerHTML);
