@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
 
     form.addEventListener("submit", (e) => {
-        window.location = window.location.pathname + "/out-of-stock";
+        if (price === 0) {
+            document.querySelector(".required").style.display = "block";
+        } else {
+            window.location = window.location.pathname + "/out-of-stock";
+        };
     });
 });
