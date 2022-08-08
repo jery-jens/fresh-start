@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById(productName).value = Number(amount.innerHTML);
 
                     if (price === 0) {
-                        button.classList.add(".disabled");
+                        button.classList.add("disabled");
                         button.disabled = true;
                         required.style.display = "block";
                     };
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
 
                 if (price !== 0) {
-                    button.classList.remove(".disabled");
+                    button.classList.remove("disabled");
                     button.disabled = false;
                     required.style.display = "none";
                 };
