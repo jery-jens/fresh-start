@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < selectionField.length; i++) {
         if (i === randomOption) {
-            selectionField[i].checked = true;
+            selectionField[i].selected = true;
         } else {
-            selectionField[i].checked = false;
+            selectionField[i].selected = false;
         };
     };
 
