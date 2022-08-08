@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
      */
 
     const selectionField = document.querySelector(".select-field").children;
+    const randomOption = Math.floor(Math.random() * selectionField.length);
 
-    console.log(selectionField);
+    console.log(randomOption);
 
     /**
      * Selector
