@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productBoxes = document.querySelectorAll(".product-box");
     let price = 0;
 
-    const button = document.querySelector(".button");
+    const button = document.querySelector(".button.disabled");
     console.log(button);
     const required = document.querySelector(".required");
 
