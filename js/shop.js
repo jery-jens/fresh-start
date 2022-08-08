@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const productBoxes = document.querySelectorAll(".product-box");
     let price = 0;
 
+    const button = document.querySelector(".button");
+    const required = document.querySelector(".required");
+
+    button.disabled = true;
+
     productBoxes.forEach((box) => {
         const innerBoxes = box.querySelectorAll(".product-inner");
 
@@ -54,9 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const productPrice = Number(innerBox.querySelector(".inner-product-price").innerHTML);
             const productName = innerBox.getAttribute("data-product");
 
-            const button = document.querySelector(".button");
-            const required = document.querySelector(".required");
-
             minus.addEventListener("click", () => {
                 if (Number(amount.innerHTML) !== 0) {
                     amount.innerHTML = Number(amount.innerHTML) - 1;
@@ -66,7 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById(productName).value = Number(amount.innerHTML);
 
                     if (price === 0) {
-                        button.classList.remove(".disabled");
+                        button.classList.add(".disabled");
+                        button.disabled = true;
                         required.style.display = "block";
                     };
                 };
@@ -89,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (price !== 0) {
                     button.classList.remove(".disabled");
+                    button.disabled = false;
                     required.style.display = "none";
                 };
             });
