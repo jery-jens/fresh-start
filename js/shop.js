@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const productPrice = Number(innerBox.querySelector(".inner-product-price").innerHTML);
             const productName = innerBox.getAttribute("data-product");
 
+            const button = document.querySelector(".button");
+            const required = document.querySelector(".required");
+
             minus.addEventListener("click", () => {
                 if (Number(amount.innerHTML) !== 0) {
                     amount.innerHTML = Number(amount.innerHTML) - 1;
@@ -61,6 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     price = price - productPrice;
                     document.querySelector(".price").innerHTML = `$${price.toFixed(2)}`;
                     document.getElementById(productName).value = Number(amount.innerHTML);
+
+                    if (price === 0) {
+                        button.classList.remove(".disabled");
+                        required.style.display = "block";
+                    };
                 };
 
                 // if (index === 0) {
@@ -78,6 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (index === 0) {
                     Number(amount.innerHTML) > 0 ? innerBoxes[1].classList.remove("closed") : innerBoxes[1].classList.add("closed");
                 };
+
+                if (price !== 0) {
+                    button.classList.remove(".disabled");
+                    required.style.display = "none";
+                };
             });
         });
     });
@@ -90,12 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-
-        if (price === 0) {
-            document.querySelector(".required").style.display = "block";
-            document.querySelector("form").setAttribute('style', 'display: block !important');
-        } else {
-            window.location = window.location.pathname + "/out-of-stock";
-        };
+        window.location = window.location.pathname + "/out-of-stock";
     });
 });
