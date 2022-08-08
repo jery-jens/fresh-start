@@ -90,9 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        
+
         if (price === 0) {
             document.querySelector(".required").style.display = "block";
+            document.querySelector("form").style.display = "block";
         } else {
             window.location = window.location.pathname + "/out-of-stock";
         };
