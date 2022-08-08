@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (price === 0) {
             document.querySelector(".required").style.display = "block";
-            document.querySelector("form").style.display = "block";
+            document.querySelector("form").setAttribute('style', 'display: block !important');
         } else {
             window.location = window.location.pathname + "/out-of-stock";
         };
