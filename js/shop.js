@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /**
+     * Select
+     */
+
+    const selectionField = document.querySelector(".select-field").children;
+
+    console.log(selectionField);
+
+    /**
      * Selector
      */
 
