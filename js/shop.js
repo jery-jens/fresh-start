@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * Images
      */
 
-    const shownImage = document.querySelector(".product-image");
+    const shownImage = document.querySelectorAll(".product-image");
     const images = document.querySelectorAll(".product-small-image");
 
     images.forEach((image) => {
@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const style = image.currentStyle || window.getComputedStyle(image, false);
             const url = style.backgroundImage.slice(4, -1).replace(/"/g, "");
             
-            shownImage.style.backgroundImage = `url(${url})`;
+            shownImage.forEach((img) => {
+                img.style.backgroundImage = `url(${url})`;
+            });
         });
     });
 
@@ -22,7 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectionField = document.querySelector(".select-field").children;
     const randomOption = Math.floor(Math.random() * selectionField.length);
 
-    console.log(randomOption);
+    for (let i = 0; i < selectionField.length; i++) {
+        if (i === randomOption) {
+            selectionField[i].checked = true;
+        } else {
+            selectionField[i].checked = false;
+        };
+    };
 
     /**
      * Selector
