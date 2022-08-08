@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let price = 0;
 
     const button = document.querySelector(".button.disabled");
-    console.log(button);
+    button.setAttribute("disabled", true);
     const required = document.querySelector(".required");
 
     button.disabled = true;
