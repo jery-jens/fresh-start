@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let price = 0;
 
     const button = document.querySelector(".button.disabled");
-    button.disabled = true;
-    console.log(button.disabled)
     const required = document.querySelector(".required");
 
-    button.disabled = true;
+    Webflow.push(function () {
+        button.disabled = true;
+    });
 
     productBoxes.forEach((box) => {
         const innerBoxes = box.querySelectorAll(".product-inner");
